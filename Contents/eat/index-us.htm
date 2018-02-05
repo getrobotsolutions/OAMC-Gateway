@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html" charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=11" />
+
+
+<!--<script language="JavaScript" type="text/javascript"
+  src="Scripts/FlashPlayer.js"></script>-->
+  
+<script language="JavaScript" type="text/javascript"
+  src="../../Scripts/BaseCommand.js"></script>
+<script language="JavaScript" type="text/javascript"
+  src="../../Scripts/BaseEvent.js"></script>
+<script language="JavaScript" type="text/javascript"
+  src="../../Scripts/LogConsole.js"></script>
+
+ <script src="../../jquery/jquery-3.2.1.min.js"></script>
+ <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+ <!--<script language="JavaScript" type="text/javascript"
+  src="../../maincontents.js"></script>-->
+<script type="text/javascript">
+  if(readCookie("lang")=="arabic"){
+    //alert("worked");
+    location.href='index.html';
+  }
+  function GoHome()
+{
+  //if(flagPictureAvatar == "true") DeleteRobotFace();  //사진 아바타 삭제
+  location.href = "../../maincontents.htm";
+}
+</script>
+
+ <script src="../../boots/js/bootstrap.min.js"></script>
+  <script src="../../Scripts/speech.js"></script>
+
+  <script src="js/lang_eat-us.js"></script>
+  <script src="../../Scripts/lang.js"></script>
+
+  <!--<script src="sheetjs/dist/xlsx.full.min.js"></script> -->
+
+  <link rel="stylesheet" href="../../boots/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="../../css/style_riyadh.css">
+
+<style>
+   .bmg{
+          background-image: none;
+          height: 1195px;
+    }
+    .img-home {
+          position: absolute;
+          top: -60px;
+
+          z-index: 99;
+          
+          height: 62px;
+          cursor: pointer; cursor: hand;
+    }
+
+      tbody {
+          display:block;
+          height:1000px;
+          overflow:auto;
+      }
+      thead, tbody tr {
+          display:table;
+          width:100%;
+          table-layout:fixed;
+      }
+      thead {
+          width: calc( 101.5% - 1em )
+      }
+      .maps{
+                background-color: darkgrey;
+    height: 550px;
+    width: 1080px;
+      }
+     hr {
+           display: block;
+          /* height: 1px; */
+          border: 0;
+          /* color: #87CEFA; */
+          margin-top: 0px;
+          border-top: 3px solid #87CEFA;
+      }
+    .wrap{
+        padding-top: 280px;
+    }
+    .part1{
+          background-color: whitesmoke;
+    height: 660px;
+    margin-top: -22px;
+    margin-left: -15px;
+    }
+    .part2{
+         background-color: #4931a1;
+      height: 660px;
+      width: 616px;
+      margin-top: -20px;
+      padding: 15px;
+    }
+        
+    .titl1{
+              font-size: 50px;
+    font-family: inherit;
+    font-style: bold;
+    padding-top: 125px;
+    padding-left: 295px;
+    }  
+    .txt1{
+            margin-top: 80px;
+    font-family: inherit;
+    font-style: unset;
+    font-size: 37px;
+    margin-left: 127px;
+    padding-right: 142px;
+    text-align: center;
+    line-height: 31px;
+    color: #00003F;
+    }
+     .txt2{
+      padding-top: 3px;
+      font-family:OpenSans-Light;
+      font-size:10px;
+      display:inline;
+    }
+    ul{
+      list-style-type: none;
+    }
+    ul.list1{
+         padding-top: 2px;
+        line-height: 64px;
+        font-size: 30px;
+        /*text-align: center;*/
+        margin-left: -60px;
+        font-weight: 500;
+        font-family: inherit;
+    }
+    ul.list1 li:after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        margin: 0px;
+        background: grey;
+    }
+    ul.list2{
+            padding-top: 2px;
+            padding-left: 64px;
+            line-height: 64px;
+            font-size: 30px;
+            /* text-align: center; */
+            margin-left: -60px;
+            font-weight: 500;
+            font-family: inherit;
+    }
+    ul.list2 li:after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        margin: 0px;
+        background: grey;
+    }
+    a,a:hover { text-decoration : none; color : #000; }
+    #leftmenu h3 {
+        margin:0;
+        font-family: OpenSans-Regular;
+        font-size: 34px;
+        font-weight: 600;
+        padding:30px 45px;
+        border-top:1px solid #154055;
+        border-bottom:1px solid #236b8e;
+        cursor:pointer;
+        background-color:#4a32a4;
+        color:#ffffff;
+        text-align:left;
+    }
+   
+    #leftmenu h5 {
+        margin:0;
+        font-family:OpenSans-Regular;
+        font-weight: 500;
+        padding:30px 80px;
+        border-top:1px solid #153F65;
+        border-bottom:1px solid #236b8e;
+        cursor:pointer;
+        background-color:#153F65;
+        color:#ffffff;
+        text-align:left;
+    }
+    
+    #leftmenu > ul {
+        margin:0;
+        padding:0;
+    }
+    #leftmenu > ul li {
+        padding-left:0px;
+        list-style-type:none;
+    }
+    #leftmenu > ul li a {
+           color: #4931a1;
+    font-weight: bolder;
+    font-size: 30px;
+    padding-left: 80px;
+    text-decoration: none;
+    padding: 30px 10px 29px 80px;
+    }
+    #leftmenu > ul li a:hover {
+        text-decoration:underline;
+    }
+    #leftmenu .current {
+        color:#006699;
+        text-decoration:underline;
+    }
+    .sub{
+      background-color:green;
+    }
+    .h5, h5 {
+        font-size: 21px;
+    }
+    .bdy{
+        margin-top: 10px;
+        line-height: 40px;
+        color: white;
+    }
+    #title{
+         font-size: 30px;
+    margin-top: 20px;
+    font-weight: 100;
+    padding-left: 55px;
+    font-family: OpenSans-Regular;
+   
+    }
+    #location{
+        font-size: 15px;
+        font-family:cursive;
+        font-weight: 200;
+    padding-left: 60px;
+    }
+    #desc{
+        font-size: 14px;
+    font-weight: 200;
+    padding-left: 55px;
+    font-family: OpenSans-Light;
+    line-height: 17px;
+    padding-bottom: 20px;
+    }
+    #btn{
+      margin-left: 55px;
+    }
+    #btn, #mapBtn{display: none;}
+    .restau-image{
+          background-color: white;
+    padding: 10px;
+    text-align: center;
+    }
+    .icon{
+      
+      width: 500px;
+    }
+    #dialog-overlay {
+
+  /* set it to fill the whil screen */
+  width:100%; 
+  height:100%;
+  
+  /* transparency for different browsers */
+  filter:alpha(opacity=50); 
+  -moz-opacity:0.5; 
+  -khtml-opacity: 0.5; 
+  opacity: 0.5; 
+  background:#000; 
+
+  /* make sure it appear behind the dialog box but above everything else */
+  position:absolute; 
+  top:0; left:0; 
+  z-index:3000; 
+
+  /* hide it by default */
+  display:none;
+}
+
+
+#dialog-box {
+  
+  /* css3 drop shadow */
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  
+  /* css3 border radius */
+  -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+  
+  background:#eee;
+  /* styling of the dialog box, i have a fixed dimension for this demo */ 
+  width:750px; 
+  
+  
+  /* make sure it has the highest z-index */
+  position:absolute; 
+  top: 20% !important;
+  z-index:5000; 
+
+  /* hide it by default */
+  display:none;
+}
+
+#dialog-box .dialog-content {
+  /* style the content */
+  max-height: 1200px;
+  overflow: scroll;
+  text-align:left; 
+  padding:10px; 
+  margin:13px;
+  color:#666; 
+  font-family:arial;
+  font-size:11px; 
+}
+
+a.button {
+  /* styles for button */
+  margin:10px auto 0 auto;
+  text-align:center;
+  display: block;
+  width:50px;
+  padding: 5px 10px 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1;
+  
+  /* button color */
+  background-color:#034671;
+  
+  /* css3 implementation :) */
+  /* rounded corner */
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  
+  /* drop shadow */
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  
+  /* text shaow */
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  position: relative;
+  cursor: pointer;
+  
+}
+
+a.button:hover {
+  /*background-color: #c33100;  */
+}
+
+/* extra styling */
+#dialog-box .dialog-content p {
+  font-weight:700; margin:0;
+}
+
+#dialog-box .dialog-content ul {
+  margin:10px 0 10px 20px; 
+  padding:0; 
+  height:50px;
+}
+.eat-icon{
+  position: absolute;
+    top: -46px;
+    z-index: 1;
+    width: 150px;
+    right: -10px;
+}
+li.odd{background-color: #c0b5e9;}
+li.even{background-color: #f3ebf9;}
+.list2{display: none;}
+.list2 li{padding-left: 50px !important;}
+</style>
+
+
+<link href="../../css/Setting.css" rel="stylesheet" type="text/css" />
+<link href="../../css/Language.css" rel="stylesheet" type="text/css" />
+<link href="../../css/Main.css" rel="stylesheet" type="text/css" />
+
+<script language="JavaScript" type="text/javascript" src="../../Scripts/FlashPlayer.js"></script>
+<script language="JavaScript" type="text/javascript" src="RobotDance.js"></script>
+  <script type="text/javascript">
+    PlaySpeech('Enjoy your time here at these restaurants.');
+  </script>
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+      <p id="currentDate"></p><br>
+      <span class="col-sm-8">
+         <img src="../../images/logo.jpg" class="img-responsive" alt="Responsive image" style="width: 521px;">
+      </span>
+      <div class="col-sm-4 text-right">
+          <img src="../../images/airport-acceridated.jpg" width="150" style="position: relative;bottom: 15px">
+
+      </div>     
+    </div>
+
+    <!--<nav class="navbar navbar-default">
+      <div class="container-fluid navbar1">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="vdivider">
+              <a onclick="FC_ContentsCall('sub_flights','')" href="#" >
+                  <span class="glyphicon glyphicon-plane" ></span>
+                  <div class="fly" id="glyph-text">رحلات طيران</div>
+                   <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="vdivider">
+            <a onclick="FC_ContentsCall('sub_boardingpass','')" href="#">
+              <span class="glyphicon glyphicon-qrcode" id="glyph-text"></span>
+              <div class="scan" id="glyph-text">مسح الصعود تمريرة الخاص بك</div>
+
+            </a>
+            </li>
+            
+            <li class="vdivider">
+              <a onclick="FC_ContentsCall('sub_terminalmap','')" href="#">
+                <span class="glyphicon glyphicon-picture" id="glyph-text"></span><div class="map" id="glyph-text">خريطة المحطة الطرفية</div>
+              </a>
+            </li>
+            <li class="dropdown vdivider">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-pushpin" id="glyph-text"></span>              <div class="lang" id="glyph-text">Change Language<span class="caret"></span></div>
+
+               </a>
+              <ul class="dropdown-menu">
+                <li class = "active">
+                  <a id="change-ar" href = "#">
+                    <img class="flag" src="../../images/flags/arabia.png">
+                  </a>
+                </li>
+                <li><a id="change-us" value="de" href="#"><img class="flag" src="../../images/flags/us.png"></a></li>
+              </ul>
+            </li>
+            <li class="vdivider"></li>
+          </ul>
+        </div>
+      </div>
+    </nav>-->
+
+
+    <div class="row" style="padding: 0;margin: 0;border:2px solid #4A32A4;">
+      <div class="col-sm-4" style=" border-top: 62px solid #4A32A4;border-right: 36px solid #ffffff00;">
+        <img src="../../images/home-white-icon.png" onclick="GoHome()" class="img-home" alt="Responsive image">
+      </div>
+      <div class="col-sm-8" style="font-size: 40px;padding-top: 20px;color: #4A32A4;font-weight: bold;">
+        <a href="#"  id="change-us" style="color: #4A32A4 !important;">ENGLISH</a>|<a  id="change-ar" href="#" style="color: #4A32A4 !important;">غير اللغة |</a>
+      </div>
+    </div>
+
+    <div class="body1">
+      <div class="bmg">       
+           <!-- <div class="maps">
+              <div class="titl1">مطار الرياض صفحة العرض</div> 
+                   <br>
+                   <div id="txt1" class="txt1">هنا يمكنك اكتشاف كل من خيارات الطعام والشراب، حيث أنها تقع، وما هو على القائمة. 
+                   </div>
+                   <div id="txt2" class="txt1">حدد زر في أسفل اليسار للبدء.</div>
+              </div>-->
+            
+            <div class="wrap" >
+               <div class="col-sm-5">
+                  <div class="part1" style="">
+                    <div id="leftmenu" >
+                      <h3 id="restau">مطاعم</h3>
+                        <img class="eat-icon" src="photo/eat-icon.png">
+                        <ul class="list1">
+                          <li class="odd"><a id="c3" href="#">ستاربكس 1</a></li>
+                          <li class="even"><a id="c4" href="#">المقاتل</a></li>
+                          <li class="odd"><a id="c5" href="#">ماما روتي كافيه</a></li>
+                          <li class="even">
+                            <a id="c6" href="#">كاريبو، بني اللون</a>
+                            <ul class="list2">
+                              <li class="odd"><a id="c61" href="#">Idli.com</a></li>
+                              <li class="even"><a id="c62" href="#">Curry Kitchen</a></li>
+                              <li class="odd"><a id="c63" href="#">Automatic</a></li>
+                            </ul>
+
+                          </li>
+                          <li class="odd"><a id="c7" href="#">قهوة واين</a></li>
+                          <li class="even"><a id="c8" href="#">دنكن "للكعك المقلي</a></li>
+                          <li class="odd"><a id="c9" href="#">قهوة جافا</a></li>
+                          <li class="even"><a id="c10" href="#">ستاربكس 2</a></li>
+                        </ul>  
+                    </div>
+                  </div>
+                </div>
+
+               <div class="col-sm-6">
+                  <div class="part2" id="content">
+                      <div class="restau-image">
+                        <img id="icon" src="photo/eat1.png" class="icon">
+                      </div>
+                      <div class="bdy">
+                        <div id="title"></div>
+                        <!--<div id="location"> </div>-->
+                        <div id="desc"></div>
+                        <button type="button" id="btn" class="btn btn-success" dir="">View Menu</button>
+                        <button type="button" id="mapBtn" class="btn btn-success" dir="">Map</button>
+                      </div>
+
+                  </div>
+               </div>
+              </div>
+      </div>
+  </div>
+  <footer>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <!--<li data-target="#myCarousel" data-slide-to="5"></li>-->
+        </ol>
+
+        <div class="carousel-inner anim" role="listbox">
+          <div class="item active">
+            <img class="fixed-height" src="../../images/1.png" width="460" height="345">
+            <div class="carousel-caption">
+              <h3></h3>
+              <p></p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img class="fixed-height" src="../../images/2.png" width="460" height="345">
+            <div class="carousel-caption">
+              <h3></h3>
+              <p></p>
+            </div>
+          </div>
+        
+          <div class="item">
+            <img class="fixed-height" src="../../images/3.png" width="460" height="345">
+            <div class="carousel-caption">
+              <h3></h3>
+              <p></p>
+            </div>
+          </div>
+       
+          <div class="item">
+            <img class="fixed-height" src="../../images/5.png" width="460" height="345">
+            <div class="carousel-caption">
+              <h3></h3>
+              <p></p>
+            </div>
+          </div>      
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+  </footer>
+  <div id="dialog-overlay"></div>
+      <div id="dialog-box">
+        
+      </div>
+</body>
+</html>
